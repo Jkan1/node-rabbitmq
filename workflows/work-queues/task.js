@@ -2,7 +2,7 @@ const amqp = require('amqplib');
 
 const { QUEUE1 } = require('./config.json');
 
-const inputMessage = process.argv.slice(2).join(' ') || "Hello World!";
+const inputMessage = process.argv.slice(2).join(' ') || `JobID-${parseInt(Math.random() * 1000 / 1000 * 50)}`;
 
 amqp.connect('amqp://127.0.0.1').then((connection) => {
 
